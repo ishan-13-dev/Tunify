@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+
+var app = angular.module('formApp', []);
+
+app.controller('formCtrl', function ($scope) {
+
+ 
+
+$scope.sendForm = function () {
+
+$scope.msg='Thanks for the feedback';
+
+
+
+};
+
+ 
+
+$scope.getClass = function (color) {
+
+return color.toString();
+
+}
+
+});
+
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color:red;
+}
+
+*
+.center{
+text-align: center;
+color: cyan;
+}
+.valid.false {
+
+background: red;
+
+}
+
+.valid.true {
+
+background: green;
+
+}
+
+.error {
+
+color: cyan;
+
+}
+
+</style>
+</head>
+<head>
+
+<body>
+  <center>
+    <div id="dvImage" style="height: 1060px; width: 2700px">
+    
+    
+        <h1 class="center">We would love to hear from you!</h1>
+        <ng-app="formApp" ng-controller="formCtrl">
+        
+        <h3>Submit your feedback here!</h3>
+        
+        <form name="personForm" ng-submit="sendForm()" method="POST" action="/">
+        
+        <label for="name">Name</label>
+        
+        <input id="name" name="name" type="text" ng-model="person.name" required />
+        
+        <span class="error" ng-show="personForm.name.$error.required"> </span>
+        
+        <br /><br />
+        
+        <label for="subject">Subject</label>
+        
+        <input id="subject" name="subject" type="text" ng-model="person.subject" required />
+        
+        <span class="error" ng-show="personForm.subject.$error.required"> </span>
+        
+        <br /><br />
+        
+        <label for="feedback">Feedback</label>
+        
+        <input id="feedback" name="feedback" type="text" ng-model="person.feedback" ng-minlength="10" required />
+        
+        <span class="error" ng-show="personForm.mobile.$error.required"></span>
+      
+        
+        <br /><br />
+        
+        
+        <button type="Submit">Submit and Proceed</button>
+        
+        <br /><br />
+        
+        </form>
+
+    
+        
+    
+    <script type="text/javascript">
+        var images = ["1.png","2.png","3.png","4.png","5.png","6.png"];
+        $(function () {
+            var i = 0;
+            $("#dvImage").css("background-image", "url(images/" + images[i] + ")");
+            setInterval(function () {
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+                $("#dvImage").fadeOut("slow", function () {
+                    $(this).css("background-image", "url(images/" + images[i] + ")");
+                    $(this).fadeIn("slow");
+                });
+            }, 5000);
+        });
+        
+    </script>
+    </div></center>
+
+</body>
+</html>
+
+    

@@ -1,0 +1,6 @@
+NOTE-
+could not add the background music (size>25 mb)
+Please add music yourself by-
+1- Naming it Music.mp3
+2-Storing it in Tunify/public/images (the location was erroneously used during project inception: as such, the code will try
+to find it in that particular path)
